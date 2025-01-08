@@ -33,7 +33,7 @@ class I3UnityFix(object):
         workspace = event.current
 
         # Same screen check
-        if event.old.rect.x == event.current.rect.x:
+        if event.old is not None and event.old.rect.x == event.current.rect.x:
             self.fix_if_necessary(workspace)
 
     def get_current_workspace(self):
